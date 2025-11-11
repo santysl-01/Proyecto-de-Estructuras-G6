@@ -10,5 +10,6 @@ int main()
         cout << num << " ";
     }
     cout << endl;
+    cout << "Hello, World!" << endl;
     return 0;
 }
