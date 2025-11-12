@@ -25,3 +25,6 @@ bool Pila::top(int &dato) const
     dato = datos[cuantos - 1]; // copia el último elemento
     return true;               // había elemento
 }
+bool Pila::empty() const {
+    return cuantos == 0;
+}
