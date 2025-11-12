@@ -15,7 +15,7 @@ bool Pila::pop(int &dato)
     if (cuantos == 0)
         return false; // pila vacía
     dato = datos[--cuantos];
-    return true;
+    return true; // se puede eliminar
 }
 
 bool Pila::top(int &dato) const

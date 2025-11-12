@@ -10,7 +10,5 @@ int main()
         cout << num << " ";
     }
     cout << endl;
-    cout << "Hello, World!" << endl;
-    cout << "This is a sample C++ program." << endl;
     return 0;
 }
