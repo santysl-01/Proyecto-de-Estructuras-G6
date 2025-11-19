@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    Pila pilaDeshacer; // Pila para acciones realizadas
-    Pila pilaRehacer;  // Pila para acciones deshechas
+    Pila pilaDeshacer;
+    Pila pilaRehacer;
 
     int opcion;
     int numero;

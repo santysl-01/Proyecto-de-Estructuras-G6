@@ -8,8 +8,7 @@ class Pila
     int cuantos;
 
 public:
-    Pila() : cuantos(0) {}
-
+    Pila();
     bool top(int &dato) const;
     bool push(int dato);
     bool pop(int &dato);
