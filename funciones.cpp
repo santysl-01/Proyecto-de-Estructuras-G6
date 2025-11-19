@@ -25,7 +25,37 @@ bool Pila::top(int &dato) const
     dato = datos[cuantos - 1]; // copia el último elemento
     return true;               // había elemento
 }
-bool Pila::empty() const {
-    return cuantos == 0;
+
+bool Pila::deshacer(Pila &pilaRehacer)
+{
+    int dato;
+
+    // Si no hay nada que deshacer, no se puede
+    if (cuantos == 0)
+        return false;
+
+    // Sacamos el último elemento de la pila principal
+    dato = datos[--cuantos];
+
+    // Guardamos el dato removido en la pila de rehacer
+    pilaRehacer.push(dato);
+
+    return true;
 }
 
+bool Pila::rehacer(Pila &pilaRehacer)
+{
+    int dato;
+
+    // Si no hay acciones para rehacer, no se puede
+    if (!pilaRehacer.top(dato))
+        return false;
+
+    // Quitamos el dato de la pila de rehacer
+    pilaRehacer.pop(dato);
+
+    // Lo regresamos a la pila principal
+    push(dato);
+
+    return true;
+}
