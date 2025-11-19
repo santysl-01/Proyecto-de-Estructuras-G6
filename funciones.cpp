@@ -26,7 +26,7 @@ bool Pila::top(int &dato) const
     return true;               // había elemento
 }
 
-bool Pila::deshacer(Pila &pilaRehacer)
+bool Pila::deshacer(Pila &pilaDeshacer)
 {
     int dato;
 
@@ -38,7 +38,7 @@ bool Pila::deshacer(Pila &pilaRehacer)
     dato = datos[--cuantos];
 
     // Guardamos el dato removido en la pila de rehacer
-    pilaRehacer.push(dato);
+    pilaDeshacer.push(dato);
 
     return true;
 }

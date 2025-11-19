@@ -13,7 +13,7 @@ public:
     bool top(int &dato) const;
     bool push(int dato);
     bool pop(int &dato);
-    bool deshacer(Pila &pilaRehacer);
+    bool deshacer(Pila &piladeshacer);
     bool rehacer(Pila &pilaRehacer);
     bool empty() const;
 };
