@@ -8,35 +8,35 @@ int main()
     Pila pilaRehacer;
 
     int opcion;
-    int numero;
 
     do
     {
         cout << "\n--- MENU DE PRUEBA ---\n";
-        cout << "1. Agregar número (push)\n";
+        cout << "1. Agregar palabra (push)\n";
         cout << "2. Deshacer (undo)\n";
         cout << "3. Rehacer (redo)\n";
-        cout << "4. Ver último número (top)\n";
+        cout << "4. Ver ultima palabra (top)\n";
         cout << "5. Salir\n";
-        cout << "Elige una opción: ";
+        cout << "Elige una opcion: ";
         cin >> opcion;
 
+        string palabra;
         switch (opcion)
         {
         case 1:
-            cout << "Ingresa un número: ";
-            cin >> numero;
+            cout << "Ingresa una palabra o numero: ";
+            cin >> palabra;
 
-            pilaDeshacer.push(numero);
+            pilaDeshacer.push(palabra);
 
             // Cada vez que agregamos algo, se limpia la pilaRedo
             while (!pilaRehacer.empty())
             {
-                int basura;
+                std::string basura;
                 pilaRehacer.pop(basura);
             }
 
-            cout << "Número agregado correctamente.\n";
+            cout << "Palabra agregada correctamente.\n";
             break;
 
         case 2:
@@ -54,10 +54,10 @@ int main()
             break;
 
         case 4:
-            if (pilaDeshacer.top(numero))
-                cout << "Último número en la pila: " << numero << "\n";
+            if (pilaDeshacer.top(palabra))
+                cout << "Ultima palabra en la pila: " << palabra << "\n";
             else
-                cout << "La pila está vacía.\n";
+                cout << "La pila esta vacia.\n";
             break;
 
         case 5:
@@ -65,7 +65,7 @@ int main()
             break;
 
         default:
-            cout << "Opción no válida.\n";
+            cout << "Opcion no valida.\n";
         }
 
     } while (opcion != 5);

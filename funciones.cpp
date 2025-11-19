@@ -1,64 +1,51 @@
 #include "funciones.hpp"
-
+#include <string>
 Pila::Pila() : cuantos(0) {}
 
-bool Pila::push(int dato)
+bool Pila::push(std::string dato)
 {
     if (cuantos == capacidad)
-        return false; // pila llena
+        return false;
     datos[cuantos++] = dato;
     return true;
 }
 
-bool Pila::pop(int &dato)
+bool Pila::pop(std::string &dato)
 {
     if (cuantos == 0)
-        return false; // pila vacía
+        return false;
     dato = datos[--cuantos];
     return true;
 }
 
-bool Pila::top(int &dato) const
+bool Pila::top(std::string &dato) const
 {
-    if (cuantos == 0)
-        return false;          // pila vacía
-    dato = datos[cuantos - 1]; // copia el último elemento
-    return true;               // había elemento
-}
-
-bool Pila::deshacer(Pila &pilaDeshacer)
-{
-    int dato;
-
-    // Si no hay nada que deshacer, no se puede
     if (cuantos == 0)
         return false;
+    dato = datos[cuantos - 1];
+    return true;
+}
 
-    // Sacamos el último elemento de la pila principal
+bool Pila::deshacer(Pila &pilaRehacer)
+{
+    std::string dato;
+    if (cuantos == 0)
+        return false;
     dato = datos[--cuantos];
-
-    // Guardamos el dato removido en la pila de rehacer
-    pilaDeshacer.push(dato);
-
+    pilaRehacer.push(dato);
     return true;
 }
 
 bool Pila::rehacer(Pila &pilaRehacer)
 {
-    int dato;
-
-    // Si no hay acciones para rehacer, no se puede
+    std::string dato;
     if (!pilaRehacer.top(dato))
         return false;
-
-    // Quitamos el dato de la pila de rehacer
     pilaRehacer.pop(dato);
-
-    // Lo regresamos a la pila principal
     push(dato);
-
     return true;
 }
+
 bool Pila::empty() const
 {
     return cuantos == 0;
