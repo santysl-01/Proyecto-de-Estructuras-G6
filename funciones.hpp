@@ -15,6 +15,7 @@ public:
     bool pop(int &dato);
     bool deshacer(Pila &pilaRehacer);
     bool rehacer(Pila &pilaRehacer);
+    bool empty() const;
 };
 
 #endif

@@ -59,3 +59,7 @@ bool Pila::rehacer(Pila &pilaRehacer)
 
     return true;
 }
+bool Pila::empty() const
+{
+    return cuantos == 0;
+}
