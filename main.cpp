@@ -4,12 +4,15 @@ using namespace std;
 
 int main()
 {
+    // Pila principal donde se almacenan las acciones realizadas
     Pila pilaDeshacer;
+    // Pila que guarda las acciones eliminadas
+    // Se usa para poder rehacer
     Pila pilaRehacer;
 
     int opcion;
 
-    do
+    do // Menu simple realizado con un bucle para probar las operaciones básicas
     {
         cout << "\n--- MENU DE PRUEBA ---\n";
         cout << "1. Agregar palabra (push)\n";
@@ -40,6 +43,7 @@ int main()
             break;
 
         case 2:
+            // Mover el ultimo elemento de pilaDeshacer hacia pilaRehacer
             if (pilaDeshacer.deshacer(pilaRehacer))
                 cout << "Deshacer realizado correctamente.\n";
             else
@@ -47,6 +51,7 @@ int main()
             break;
 
         case 3:
+            // Recuperar el ultimo elemento de pilaRehacer hacia pilaDeshacer
             if (pilaDeshacer.rehacer(pilaRehacer))
                 cout << "Rehacer realizado correctamente.\n";
             else
@@ -54,6 +59,7 @@ int main()
             break;
 
         case 4:
+            // Consultar el elemento superior
             if (pilaDeshacer.top(palabra))
                 cout << "Ultima palabra en la pila: " << palabra << "\n";
             else
