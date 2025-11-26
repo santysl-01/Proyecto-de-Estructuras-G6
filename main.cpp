@@ -22,6 +22,11 @@ int main()
         cout << "5. Salir\n";
         cout << "Elige una opcion: ";
         cin >> opcion;
+        if (opcion > 5 || opcion < 1)
+        {
+            cout << "Opcion no valida, intenta de nuevo.\n";
+            continue;
+        }
 
         string palabra;
         switch (opcion)
