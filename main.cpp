@@ -39,23 +39,23 @@ int main()
                 pilaRehacer.pop(basura);
             }
 
-            cout << "Palabra agregada correctamente.\n";
+            cout << "Palabra agregada correctamente\n";
             break;
 
         case 2:
             // Mover el ultimo elemento de pilaDeshacer hacia pilaRehacer
             if (pilaDeshacer.deshacer(pilaRehacer))
-                cout << "Deshacer realizado correctamente.\n";
+                cout << "Deshacer realizado correctamente\n";
             else
-                cout << "No hay nada que deshacer.\n";
+                cout << "No hay nada que deshacer\n";
             break;
 
         case 3:
             // Recuperar el ultimo elemento de pilaRehacer hacia pilaDeshacer
             if (pilaDeshacer.rehacer(pilaRehacer))
-                cout << "Rehacer realizado correctamente.\n";
+                cout << "Rehacer realizado correctamente\n";
             else
-                cout << "No hay nada que rehacer.\n";
+                cout << "No hay nada que rehacer\n";
             break;
 
         case 4:
@@ -63,7 +63,7 @@ int main()
             if (pilaDeshacer.top(palabra))
                 cout << "Ultima palabra en la pila: " << palabra << "\n";
             else
-                cout << "La pila esta vacia.\n";
+                cout << "La pila esta vacia\n";
             break;
 
         case 5:
@@ -71,7 +71,7 @@ int main()
             break;
 
         default:
-            cout << "Opcion no valida.\n";
+            cout << "Opcion no valida\n";
         }
 
     } while (opcion != 5);

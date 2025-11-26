@@ -16,7 +16,7 @@ bool Pila::push(std::string dato)
     return true;
 }
 
-// Extrae el ultimo elemento insertado
+// Elimina el ultimo elemento insertado
 // Si la pila esta vacia,lanza false
 bool Pila::pop(std::string &dato)
 {
